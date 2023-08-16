@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS Movie;
+CREATE TABLE Movie (
+Id INT PRIMARY KEY,
+Movie_Name VARCHAR(50) NOT NULL,
+Status VARCHAR(3) NOT NULL,
+Ticket_Cost DOUBLE NOT NULL
+);
+
+DROP TABLE IF EXISTS Theatre_Show;
+CREATE TABLE Theatre_Show (
+Id INT PRIMARY KEY,
+Movie_Id INT,
+Movie_Name VARCHAR(50) NOT NULL,
+Theatre_Name VARCHAR(50) NOT NULL,
+City_Name VARCHAR(50) NOT NULL,
+Movie_Date VARCHAR(50) NOT NULL,
+Start_Show_Time VARCHAR(50) NOT NULL,
+End_Show_Time VARCHAR(50) NOT NULL,
+Available_Seats VARCHAR(50) NOT NULL,
+Third_Ticket_Discount INT,
+Afternoon_Discount INT
+);
+
+DROP TABLE IF EXISTS Booking;
+CREATE TABLE Booking (
+Id INT PRIMARY KEY,
+Show_Id INT NOT NULL,
+Booked_Seats VARCHAR(50) NOT NULL,
+Cost DOUBLE NOT NULL
+);
